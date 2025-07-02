@@ -7,15 +7,15 @@ import (
 	"strings"
 	"time"
 
-	"queue-broker/internal/domain"
+	"queue-broker/internal/domain/ports"
 )
 
 type QueueHandler struct {
-	service        domain.QueueService
+	service        ports.QueueService
 	defaultTimeout time.Duration
 }
 
-func NewQueueHandler(service domain.QueueService, defaultTimeout time.Duration) *QueueHandler {
+func NewQueueHandler(service ports.QueueService, defaultTimeout time.Duration) *QueueHandler {
 	return &QueueHandler{
 		service:        service,
 		defaultTimeout: defaultTimeout,

@@ -1,9 +1,12 @@
-package domain
+package ports
 
-import "time"
+import (
+	"time"
+	"queue-broker/internal/domain"
+)
 
 type QueueRepository interface {
 	CreateQueue(name string) error
-	PutMessage(queueName string, message *Message) error
-	GetMessage(queueName string, timeout time.Duration) (*Message, error)
+	PutMessage(queueName string, message *domain.Message) error
+	GetMessage(queueName string, timeout time.Duration) (*domain.Message, error)
 }

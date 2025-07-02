@@ -4,13 +4,14 @@ import (
 	"time"
 
 	"queue-broker/internal/domain"
+	"queue-broker/internal/domain/ports"
 )
 
 type QueueServiceImpl struct {
-	repo domain.QueueRepository
+	repo ports.QueueRepository
 }
 
-func NewQueueService(repo domain.QueueRepository) domain.QueueService {
+func NewQueueService(repo ports.QueueRepository) ports.QueueService {
 	return &QueueServiceImpl{
 		repo: repo,
 	}

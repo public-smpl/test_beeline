@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"time"
 
-	"queue-broker/internal/handler"
+	"queue-broker/internal/handler/http"
 	"queue-broker/internal/infrastructure"
 	"queue-broker/internal/usecase"
 )
